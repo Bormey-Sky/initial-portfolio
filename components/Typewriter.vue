@@ -22,7 +22,7 @@ const glitchChars =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]{}|;:',.<>?/~`";
 
 function getRandomGlitchChar(): string {
-  return glitchChars[Math.floor(Math.random() * glitchChars.length)];
+  return glitchChars[Math.floor(Math.random() * glitchChars.length)] ?? ''
 }
 
 function typeWord() {
@@ -104,7 +104,7 @@ onMounted(() => {
 <template>
   <div class="">
     <span
-      class="inline-block overflow-hidden border-r-8 animate-blink pr-1 min-w-[1ch]"
+      class="font-mono inline-block overflow-hidden border-r-8 animate-blink pr-1 min-w-[1ch]"
     >
       {{ displayText }}
     </span>

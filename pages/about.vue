@@ -2,14 +2,15 @@
 import { ref, onMounted } from "vue";
 
 const isVisible = ref(false);
-const activeFace = ref("images/face-1.png");
+const activeFace = ref("/images/face-1.png");
 const aboutSection = ref<HTMLElement | null>(null);
-const faceSwap = ["images/face-1.png", "images/face-2.png"];
+const faceSwap = ["/images/face-1.png", "/images/face-2.png"];
+
 
 function cycleFace() {
   setInterval(() => {
     const randomIndex = Math.floor(Math.random() * faceSwap.length);
-    activeFace.value = faceSwap[randomIndex];
+    activeFace.value = faceSwap[randomIndex] ?? faceSwap[0]!
   }, 700);
 }
 
@@ -32,7 +33,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="about" ref="aboutSection" class="min-h-screen w-screen bg-slate-100">
+  <div id="about" ref="aboutSection" class="min-h-screen w-screen bg-stone-50">
     <div class="grid grid-cols-2 lg:grid-cols-3">
       <div class="col-span-3 h-[10rem] ml-6 lg:ml-16">
         <div class="about-text">About</div>
@@ -42,8 +43,8 @@ onMounted(() => {
       >
         me
       </div>
-      <div class="cols-span-3 md:mt-36 -ml-4 mt-30 mr-10">
-        "I'm a computer science graduate with a focus on AI and research - mostly the kind spoken by humans, 
+      <div class="font-playfair cols-span-3 md:mt-36 -ml-4 mt-30 mr-10">
+        I'm a computer science graduate with a focus on AI and research - mostly the kind spoken by humans, 
         not machines (though I’ve spent plenty of time with both). I also have side passion for web/app development, 
         and you can pay them a visit in the project section also.
         <br />
@@ -51,11 +52,9 @@ onMounted(() => {
         Also has a deep appreciation for animals, slow mornings, and projects that feel like they matter - even just a little. 
          Just here, building things one piece at a time.
 
-
-        "
       </div>
       <div class="col-span-1 hidden lg:block md:scale-0.5">
-        <NuxtImg src="images/portrait.jpeg" class="h-[30rem]" />
+        <NuxtImg src="/images/portrait.jpeg" class="h-[30rem]" />
       </div>
     </div>
 
@@ -82,7 +81,7 @@ onMounted(() => {
         ></div>
       </div>
     </div>
-    <div class="w-full h-[19rem] -mt-57 bg-slate-100 relative z-20"></div>
+    <div class="w-full h-[19rem] -mt-57 bg-stone-50 relative z-20"></div>
   </div>
 
   

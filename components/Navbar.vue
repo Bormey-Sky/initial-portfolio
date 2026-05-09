@@ -83,7 +83,7 @@ const scrollTo = (id: string) => {
 
 
 <template>
-  <nav class="fixed top-0 left-0 w-full navbar-text bg-slate-100 z-50 p-4 flex justify-center items-center font-mono space-x-8">
+  <nav class="fixed top-0 left-0 w-full navbar-text bg-stone-50 z-50 p-4 flex justify-center items-center font-playfair space-x-8">
     <a
   href="#home"
   @click.prevent="scrollToSection('home')"

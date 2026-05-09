@@ -5,7 +5,7 @@
 <template>
 
     <Navbar/>
-    <div class="bg-slate-100 h-screen w-screen ">
+    <div class="bg-stone-50 h-screen w-screen ">
         
         <slot/>
 

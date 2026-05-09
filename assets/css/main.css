@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* main.css */
+@theme {
+  --font-playfair: "Playfair Display", Georgia, serif;
+}
 
 
 .html {
@@ -7,29 +13,41 @@
 
 
 .name-popup {
-  @apply absolute italic font-light text-[rgb(67,67,67)];
+  @apply absolute font-bold text-[rgb(67,67,67)];
 }
 
 .navbar-text {
   @apply text-lg font-bold text-[rgb(144,144,144)];
 }
 
-.page-title {
+/* .page-title {
   @apply text-[300%] font-bold font-mono text-[rgb(104,104,104)];
+} */
+
+.page-title {
+  @apply text-[125%] font-bold font-playfair text-[#1a1510];
 }
 
 .page-title-i {
-  @apply text-[100%] font-bold italic font-mono text-[rgb(144,144,144)];
+  @apply text-[100%] font-bold font-playfair text-[#1a1510];
 }
 
 .page-description {
-  @apply text-[150%] font-medium font-mono text-[rgb(111,111,111)];
+  @apply text-[150%] font-medium font-playfair text-[rgb(111,111,111)];
 }
 
 .about-text {
-  @apply text-left text-[8rem] md:text-[10rem] font-bold tracking-wide font-mono text-[rgb(77,77,77)] 
+  @apply text-left text-[6rem] md:text-[10rem] font-bold tracking-wide font-playfair text-[rgb(77,77,77)] 
 }
 
 .notebook-page-title {
-  @apply text-center text-7xl lg:text-[8rem] md:text-[7rem] font-extrabold font-mono italic text-[rgb(111,111,111)];
+  @apply text-center text-7xl lg:text-[8rem] md:text-[7rem] font-extrabold font-playfair text-[rgb(111,111,111)];
+}
+
+.project-card-title {
+  @apply text-left text-2xl text-slate-900
+}
+
+.project-card-tag {
+  @apply text-center text-sm text-slate-900
 }

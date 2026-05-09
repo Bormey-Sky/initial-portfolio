@@ -2,7 +2,7 @@
 import { ref, onMounted } from "vue";
 import Projects from "./projects.vue";
 import About from "./about.vue";
-import PassionProject from "./passionProject.vue";
+// import PassionProject from "./passionProject.vue";
 
 
 const pageTitle = 'Bormey Chanchem';
@@ -79,12 +79,12 @@ const animationKey = ref(0);
 
 
 <template>
-  <div id="home" class="relative w-screen h-screen overflow-hidden bg-slate-100 scroll-smooth">
+  <div id="home" class="relative w-screen h-screen overflow-hidden bg-stone-50 scroll-smooth">
     <!-- overlay on top -->
-    <div class="absolute top-0 left-0 w-full h-[30vh] bg-slate-100 z-20">
+    <div class="absolute top-0 left-0 w-full h-[30vh] bg-stone-50 z-20">
       <div class="bg-amber-300 w-fit h-fit text-center mt-24 p-4 font-mono font-bold text-2xl italic"> !Under Construction!</div>
     </div>
-    <div class="absolute bottom-0 left-0 w-full h-[30vh] bg-slate-100 z-20">
+    <div class="absolute bottom-0 left-0 w-full h-[30vh] bg-stone-50 z-20">
       <div class="pt-12 pl-8 pr-8">
         <Typewriter 
       phrase="This site is where works in progress are accepted"
@@ -104,8 +104,9 @@ const animationKey = ref(0);
           text-[80px] sm:text-[100px] md:text-[100px] lg:text-[120px] xl:text-[150px] 2xl:text-[200px]
           leading-none"
       >
-        <div class="animate-float-in-top">Hi,</div>
-        <div class="animate-float-in-bottom text-5xl">I'm Bormey</div>
+        <div class="page-title animate-float-in-top">Hi,</div>
+        <div class="page-title-i animate-float-in-bottom text-5xl">I'm Bormey</div>
+
       </div>
     </div>
   </div>
