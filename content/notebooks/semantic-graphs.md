@@ -171,10 +171,5 @@ The interesting research question isn't "which architecture is better?" but "whi
 
 ---
 
-## Try it yourself
-
-A companion interactive demo (`AR_vs_Diffusion_Demo.html`) visualizes how each architecture processes a sentence step-by-step. Open it in a browser and watch AR generate left-to-right while diffusion denoises the whole sequence in parallel.
-
----
 
 *Source code: [github.com/Bormey-Sky/Autoregressive-and-Diffusion-Language-Models](https://github.com/Bormey-Sky/Autoregressive-and-Diffusion-Language-Models)*
