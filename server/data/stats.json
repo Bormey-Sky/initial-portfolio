@@ -1,6 +1,91 @@
 {
-  "semantic-graphs": {
+  "autoregressive-diffusion": {
     "views": 9,
-    "downloads": 2
+    "downloads": 1,
+    "log": [
+      {
+        "type": "view",
+        "ip": "::1",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.119.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36",
+        "ref": "http://localhost:3000/notebook/autoregressive-diffusion",
+        "at": "2026-05-14T11:38:55.295Z"
+      },
+      {
+        "type": "view",
+        "ip": "",
+        "ua": "unknown",
+        "ref": "",
+        "at": "2026-05-14T11:38:55.613Z"
+      },
+      {
+        "type": "view",
+        "ip": "",
+        "ua": "unknown",
+        "ref": "",
+        "at": "2026-05-14T11:38:55.754Z"
+      },
+      {
+        "type": "view",
+        "ip": "",
+        "ua": "unknown",
+        "ref": "",
+        "at": "2026-05-14T11:38:55.921Z"
+      },
+      {
+        "type": "view",
+        "ip": "",
+        "ua": "unknown",
+        "ref": "",
+        "at": "2026-05-14T11:38:56.020Z"
+      },
+      {
+        "type": "view",
+        "ip": "",
+        "ua": "unknown",
+        "ref": "",
+        "at": "2026-05-14T11:38:56.122Z"
+      },
+      {
+        "type": "view",
+        "ip": "",
+        "ua": "unknown",
+        "ref": "",
+        "at": "2026-05-14T11:38:56.201Z"
+      },
+      {
+        "type": "download",
+        "ip": "::1",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.119.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36",
+        "ref": "http://localhost:3000/notebook/autoregressive-diffusion",
+        "at": "2026-05-14T11:39:34.388Z"
+      },
+      {
+        "type": "view",
+        "ip": "",
+        "ua": "unknown",
+        "ref": "",
+        "at": "2026-05-14T11:39:35.765Z"
+      },
+      {
+        "type": "view",
+        "ip": "",
+        "ua": "unknown",
+        "ref": "",
+        "at": "2026-05-14T11:40:10.605Z"
+      }
+    ]
+  },
+  "khmer-semantic-similarity": {
+    "views": 1,
+    "downloads": 0,
+    "log": [
+      {
+        "type": "view",
+        "ip": "",
+        "ua": "unknown",
+        "ref": "",
+        "at": "2026-05-14T11:38:28.841Z"
+      }
+    ]
   }
 }

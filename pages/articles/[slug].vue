@@ -16,15 +16,16 @@ if (!data.value) {
 // so `article.value` is never null in handleDownload or in the template.
 const article = data as Ref<NonNullable<typeof data.value>>
 
-// Track view
-await useFetch('/api/track', { method: 'POST', body: { slug, type: 'view' } })
+await callOnce(`track-view-${slug}`, () =>
+  $fetch('/api/track', { method: 'POST', body: { slug, type: 'view' } })
+)
 
 // Load stats
 const { data: stats, refresh: refreshStats } = await useFetch(`/api/stats/${slug}`)
 
 async function handleDownload() {
   if (!article.value.pdf) return
-  await useFetch('/api/track', { method: 'POST', body: { slug, type: 'download' } })
+  await $fetch('/api/track', { method: 'POST', body: { slug, type: 'download' } })
   await refreshStats()
   window.open(article.value.pdf, '_blank')
 }

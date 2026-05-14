@@ -14,8 +14,13 @@ if (!data.value) {
 
 const notebook = data as Ref<NonNullable<typeof data.value>>
 
-function handleDownload() {
+await callOnce(`track-view-${slug}`, () =>
+  $fetch('/api/track', { method: 'POST', body: { slug, type: 'view' } })
+)
+
+async function handleDownload() {
   if (!notebook.value.pdf) return
+  await $fetch('/api/track', { method: 'POST', body: { slug, type: 'download' } })
   window.open(notebook.value.pdf, '_blank')
 }
 </script>
