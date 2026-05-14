@@ -18,10 +18,10 @@ onMounted(() => {
   $fetch('/api/track', { method: 'POST', body: { slug, type: 'view' } })
 })
 
-async function handleDownload() {
+function handleDownload() {
   if (!notebook.value.pdf) return
-  await $fetch('/api/track', { method: 'POST', body: { slug, type: 'download' } })
   window.open(notebook.value.pdf, '_blank')
+  $fetch('/api/track', { method: 'POST', body: { slug, type: 'download' } })
 }
 </script>
 

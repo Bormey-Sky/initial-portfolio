@@ -23,11 +23,10 @@ onMounted(() => {
 // Load stats
 const { data: stats, refresh: refreshStats } = await useFetch(`/api/stats/${slug}`)
 
-async function handleDownload() {
+function handleDownload() {
   if (!article.value.pdf) return
-  await $fetch('/api/track', { method: 'POST', body: { slug, type: 'download' } })
-  await refreshStats()
   window.open(article.value.pdf, '_blank')
+  $fetch('/api/track', { method: 'POST', body: { slug, type: 'download' } })
 }
 </script>
 
