@@ -14,9 +14,9 @@ if (!data.value) {
 
 const notebook = data as Ref<NonNullable<typeof data.value>>
 
-await callOnce(`track-view-${slug}`, () =>
+onMounted(() => {
   $fetch('/api/track', { method: 'POST', body: { slug, type: 'view' } })
-)
+})
 
 async function handleDownload() {
   if (!notebook.value.pdf) return

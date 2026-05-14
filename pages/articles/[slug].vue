@@ -16,9 +16,9 @@ if (!data.value) {
 // so `article.value` is never null in handleDownload or in the template.
 const article = data as Ref<NonNullable<typeof data.value>>
 
-await callOnce(`track-view-${slug}`, () =>
+onMounted(() => {
   $fetch('/api/track', { method: 'POST', body: { slug, type: 'view' } })
-)
+})
 
 // Load stats
 const { data: stats, refresh: refreshStats } = await useFetch(`/api/stats/${slug}`)

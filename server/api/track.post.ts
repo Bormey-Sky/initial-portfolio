@@ -37,7 +37,7 @@ export default defineEventHandler(async (event) => {
   if (body.type === 'download') entry.downloads++
 
   const forwarded = getRequestHeader(event, 'x-forwarded-for')
-  const ip = forwarded ? forwarded.split(',')[0].trim() : (event.node.req.socket?.remoteAddress ?? 'unknown')
+  const ip = forwarded ? (forwarded.split(',')[0] ?? forwarded).trim() : (event.node.req.socket?.remoteAddress ?? 'unknown')
 
   entry.log.push({
     type: body.type,
