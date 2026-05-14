@@ -3,8 +3,7 @@ import { resolve } from 'path'
 
 const DATA_PATH = resolve('server/data/stats.json')
 
-interface LogEntry {
-  type: 'view' | 'download'
+interface DownloadEntry {
   ip: string
   ua: string
   ref: string
@@ -12,9 +11,8 @@ interface LogEntry {
 }
 
 interface SlugStats {
-  views: number
   downloads: number
-  log: LogEntry[]
+  log: DownloadEntry[]
 }
 
 function loadStats(): Record<string, SlugStats> {
@@ -27,20 +25,18 @@ function saveStats(stats: Record<string, SlugStats>) {
 }
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody<{ slug: string; type: 'view' | 'download' }>(event)
+  const body = await readBody<{ slug: string }>(event)
   const stats = loadStats()
 
-  const entry: SlugStats = stats[body.slug] ?? { views: 0, downloads: 0, log: [] }
+  const entry: SlugStats = stats[body.slug] ?? { downloads: 0, log: [] }
   if (!entry.log) entry.log = []
 
-  if (body.type === 'view') entry.views++
-  if (body.type === 'download') entry.downloads++
+  entry.downloads++
 
   const forwarded = getRequestHeader(event, 'x-forwarded-for')
   const ip = forwarded ? (forwarded.split(',')[0] ?? forwarded).trim() : (event.node.req.socket?.remoteAddress ?? 'unknown')
 
   entry.log.push({
-    type: body.type,
     ip,
     ua: getRequestHeader(event, 'user-agent') ?? 'unknown',
     ref: getRequestHeader(event, 'referer') ?? '',
@@ -49,5 +45,5 @@ export default defineEventHandler(async (event) => {
 
   stats[body.slug] = entry
   saveStats(stats)
-  return { views: entry.views, downloads: entry.downloads }
+  return { downloads: entry.downloads }
 })

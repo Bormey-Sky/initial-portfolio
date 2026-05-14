@@ -36,6 +36,12 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    watchOptions: {
+      ignored: ['**/server/data/stats.json'],
+    },
+  },
+
   modules: ['@nuxt/image', '@nuxt/icon', '@nuxt/content'],
   app: {
     head: {

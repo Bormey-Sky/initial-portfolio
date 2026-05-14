@@ -14,14 +14,10 @@ if (!data.value) {
 
 const notebook = data as Ref<NonNullable<typeof data.value>>
 
-onMounted(() => {
-  $fetch('/api/track', { method: 'POST', body: { slug, type: 'view' } })
-})
-
 function handleDownload() {
   if (!notebook.value.pdf) return
   window.open(notebook.value.pdf, '_blank')
-  $fetch('/api/track', { method: 'POST', body: { slug, type: 'download' } })
+  $fetch('/api/track', { method: 'POST', body: { slug } })
 }
 </script>
 
