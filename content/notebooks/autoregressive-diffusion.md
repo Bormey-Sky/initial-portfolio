@@ -1,5 +1,5 @@
 ---
-slug: "semantic-graphs"
+slug: "autoregressive-diffusion"
 title: "Autoregressive and Diffusion Language Models: How Each Architecture Encodes and Accesses Linguistic Knowledge"
 date: "2026-05-16"
 tag: "Autoregressive | Diffusion"
